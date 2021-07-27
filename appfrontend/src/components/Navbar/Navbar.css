@@ -1,0 +1,58 @@
+.nav--bar {
+    width: 100%;
+    height: 3rem;
+    background: #8a8787;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.nav--logo {
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.nav--auth button {
+    margin: 0 10px;
+    font-size: 20px;
+    background: rgb(230, 214, 206);
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.nav--content {
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.nav--links {
+    display: flex;
+    margin-left: 6rem;
+    font-weight: 600;
+}
+
+.nav--link {
+    margin-left: 2rem;
+    box-sizing: border-box;
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.page--link {
+    text-decoration: none;
+    color: inherit;
+    padding: 5px;
+}
+
+.active {
+    background: whitesmoke;
+    color: #524f4f;
+}
