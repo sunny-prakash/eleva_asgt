@@ -5,3 +5,17 @@
     justify-content: center;
     align-items: center;
 }
+
+.signup--form {
+    width: 25vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.signup--form button {
+    font-size: larger;
+    padding: 3px;
+}

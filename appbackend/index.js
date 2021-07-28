@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 const auth = require('./routes/auth');
+const {User} =require('./models/user');
 
 const app = express();
 
@@ -16,6 +17,12 @@ app.use(cors());
 
 app.use('/api/auth',auth);
 
+app.get('/api/getuser/:id',async (req,res)=>{
+    console.log(req.params.id);
+    // let user = await User.findOne(req.params.id);
+    // if(!user) return res.status(400).send({message:"No user Found"});
+    // return res.status(200).send({username:user.username,fullname:user.fullname,address:user.address});
+})
 
 const port = process.env.PORT || 8080;
 

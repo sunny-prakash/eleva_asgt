@@ -10,7 +10,7 @@ export default function Navbar() {
                 <div className="nav--logo">LOGO</div>
                 <div className="nav--links">
                     <div className="nav--link"><NavLink className="page--link"  to="/home">{"HOME"}</NavLink></div>
-                    <div className="nav--link"><NavLink className="page--link" to="/user">{"USER"}</NavLink></div>
+                    <div className="nav--link"><NavLink className="page--link" to="/user">{"USER PROFILE"}</NavLink></div>
                 </div>
 
             </div>

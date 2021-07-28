@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const joi = require('joi');
-const jwt = require('jasonwebtoken');
+const jwt = require('jsonwebtoken');
+require('dotenv/config');
 
 const userSchema = mongoose.Schema({
-        name:{
+        fullname:{
                 type:String,
                 required:true,
                 minlenght:5,
@@ -19,7 +20,7 @@ const userSchema = mongoose.Schema({
         password:{
                 type:String,
                 required:true,
-                minlenght:8,
+                minlenght:5,
                 maxlength:1024
         },
         address:{
@@ -34,17 +35,23 @@ const userSchema = mongoose.Schema({
         }
 },{timestamps:true});
 
+userSchema.methods.generateAuthToken = function(){
+        const token = jwt.sign({_id:this._id},process.env.JWT_SECRET_KEY);
+        return token;
+}
+
 
 const User = mongoose.model('User',userSchema);
 
 function validateUser(user){
         const schema = joi.object({
-                name:joi.string().min(5).max(60).required(),
+                fullname:joi.string().min(5).max(60).required(),
                 email:joi.string().min(10).max(255).email().required(),
-                password:joi.string().min(8).max(1024).required(),
+                password:joi.string().min(5).max(1024).required(),
                 address:joi.string().min(10).max(1024).required(),
                 username: joi.string()
         })
+        return schema.validate(user);
 }
 module.exports.User = User;
 module.exports.validate = validateUser;

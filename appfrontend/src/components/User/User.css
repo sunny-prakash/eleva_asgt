@@ -1,0 +1,17 @@
+.user--main {
+    box-sizing: border-box;
+    padding: 3rem 10rem;
+}
+
+.profile--img {
+    width: 15rem;
+    height: 20rem;
+    border-radius: 20px;
+}
+
+.user--details {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
